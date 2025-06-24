@@ -13,8 +13,8 @@ setValue
     }
 
     return (
-        <>
-            <label>{label}</label>
+        <div className="select-container">
+            <label className="select-label">{label}</label>
             <select value={value} onChange={handleSelect} className={className}>
                 {options.map((option, index) => {
                     return (
@@ -24,7 +24,7 @@ setValue
                     );
                 })}
             </select>
-        </>
+        </div>
     )
 }
 

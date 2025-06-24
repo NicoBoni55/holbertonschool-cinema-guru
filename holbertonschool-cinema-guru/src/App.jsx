@@ -3,7 +3,7 @@ import SelectInput from "./components/general/SelectInput";
 import SearchBar from "./components/general/SearchBar";
 import Button from "./components/general/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faHeart, faUser } from "@fortawesome/free-solid-svg-icons";
+import {faHeart, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import './App.css'
 import { useState } from 'react';
 
@@ -14,9 +14,9 @@ function App() {
 
 
   const options = [
-    { value: "option1", label: "Opción 1" },
-    { value: "option2", label: "Opción 2" },
-    { value: "option3", label: "Opción 3" }
+    { value: "option1", label: "Default" },
+    { value: "option2", label: "Latest" },
+    { value: "option3", label: "Oldest" }
   ];
 
   const handleButtonClick = () => {
@@ -31,21 +31,31 @@ function App() {
         <section className="component-section">
           <h2>Componente Input</h2>
         <Input
-          label="Nombre"
+          label="Username"
           type="text"
-          className="input-container"
+          className="input-section"
           value={name}
           setValue={setName}
           icon={<FontAwesomeIcon icon={faUser} />}
-          inputAttributes={{placeholder: "Ingresa tu nombre", required:true}}
+          inputAttributes={{required:true}}
           />
         <p>Valor actual: {name}</p>
+        </section>
+        <section className="component-section">
+          <h2>Componente SelectInput</h2>
+          <SelectInput
+            label="Sort:"
+            options={options}
+            className="select-section"
+            value={selectValue}
+            setValue={setSelectValue}
+           />
         </section>
         <section className="component-section">
           <h2>Componente Button</h2>
           <Button
             label="Click Me"
-            className="btn primary"
+            className="btn-primary"
             onClick={handleButtonClick}
             icon={<FontAwesomeIcon icon={faHeart} />}
            />
@@ -55,19 +65,8 @@ function App() {
           <SearchBar
           title={searchValue}
           setTitle={setSearchValue}
-          className="search-container"
            />
           <p>Búsqueda actual: {searchValue}</p>
-        </section>
-        <section className="component-section">
-          <h2>Componente SelectInput</h2>
-          <SelectInput
-            label="Selecciona una opción"
-            options={options}
-            className="select-container"
-            value={selectValue}
-            setValue={setSelectValue}
-           />
         </section>
       </div>
       

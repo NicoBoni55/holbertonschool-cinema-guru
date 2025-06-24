@@ -8,8 +8,8 @@ export default function Button({
 }) {
     return (
         <button className={className} onClick={onClick}>
-            {icon && <span>{icon}</span>}
-            {label}
+            <span className="button-icon">{icon} </span>
+            <label className="button-label">{label}</label>
         </button>
     )
 }

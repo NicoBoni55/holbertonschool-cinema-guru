@@ -1,3 +1,4 @@
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 
 
@@ -9,11 +10,16 @@ export default function SearchBar({title, setTitle}) {
     }
 
     return (
+        <div>
         <input 
-        placeholder={title} 
+        className="search-bar"
+        placeholder={title}
         type="text" 
         onChange={handleInput}
-        value={title} />
+        value={title}
+        >
+        </input>
+        </div>
     )
 }
 

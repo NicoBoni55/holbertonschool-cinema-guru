@@ -1,3 +1,4 @@
+import '../general/general.css';
 import PropTypes from "prop-types";
 
 export default function Input({
@@ -13,10 +14,10 @@ export default function Input({
         setValue(event.target.value);
     }
     return (
-        <>
-            <label>{label}</label>
+        <div className='input-container'>
+            <span className='input-icon'>{icon} </span>
+            <label className='input-label'>{label}</label>
             <div>
-            {icon && <span>{icon}</span>}
             <input
                 className={className} 
                 type={type}  
@@ -25,7 +26,7 @@ export default function Input({
                 {...inputAttributes}
             />
             </div>
-        </>
+        </div>
     );
 }
 
