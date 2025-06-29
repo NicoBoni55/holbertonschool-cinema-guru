@@ -8,15 +8,18 @@ export default function Input({
     value,
     setValue,
     icon,
+    labelClassName = "",
+    iconClassName = "",
+    divClassName = "",
     inputAttributes
 }) {
     const handleInput = (event) => {
         setValue(event.target.value);
     }
     return (
-        <div className='input-container'>
-            <span className='input-icon'>{icon} </span>
-            <label className='input-label'>{label}</label>
+        <div className={divClassName}>
+            <span className={iconClassName}>{icon} </span>
+            <label className={labelClassName}>{label}</label>
             <div>
             <input
                 className={className} 
@@ -37,5 +40,8 @@ Input.propTypes = {
     value: PropTypes.any.isRequired,
     setValue: PropTypes.func.isRequired,
     icon: PropTypes.element,
+    labelClassName: PropTypes.string,
+    iconClassName: PropTypes.string,
+    divClassName: PropTypes.string,
     inputAttributes: PropTypes.object
 }
